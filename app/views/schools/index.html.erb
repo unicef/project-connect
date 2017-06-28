@@ -1,0 +1,95 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Schools</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Admin0</th>
+      <th>Admin1</th>
+      <th>Admin2</th>
+      <th>Admin3</th>
+      <th>Admin4</th>
+      <th>Admin code</th>
+      <th>Admin</th>
+      <th>Altitude</th>
+      <th>Availability connectivity</th>
+      <th>Connectivity</th>
+      <th>Country</th>
+      <th>Country code</th>
+      <th>Datasource</th>
+      <th>Description</th>
+      <th>Educ level</th>
+      <th>Electricity</th>
+      <th>Environment</th>
+      <th>Filename</th>
+      <th>Frequency</th>
+      <th>Latency connectivity</th>
+      <th>Lat</th>
+      <th>Lon</th>
+      <th>Name</th>
+      <th>Num classrooms</th>
+      <th>Num latrines</th>
+      <th>Num teachers</th>
+      <th>Num students</th>
+      <th>Num sections</th>
+      <th>Phone number</th>
+      <th>Postal code</th>
+      <th>Speed connectivity</th>
+      <th>Type conectivity</th>
+      <th>Type school</th>
+      <th>Water</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schools.each do |school| %>
+      <tr>
+        <td><%= school.address %></td>
+        <td><%= school.admin0 %></td>
+        <td><%= school.admin1 %></td>
+        <td><%= school.admin2 %></td>
+        <td><%= school.admin3 %></td>
+        <td><%= school.admin4 %></td>
+        <td><%= school.admin_code %></td>
+        <td><%= school.admin_id %></td>
+        <td><%= school.altitude %></td>
+        <td><%= school.availability_connectivity %></td>
+        <td><%= school.connectivity %></td>
+        <td><%= school.country %></td>
+        <td><%= school.country_code %></td>
+        <td><%= school.datasource_id %></td>
+        <td><%= school.description %></td>
+        <td><%= school.educ_level %></td>
+        <td><%= school.electricity %></td>
+        <td><%= school.environment %></td>
+        <td><%= school.filename %></td>
+        <td><%= school.frequency %></td>
+        <td><%= school.latency_connectivity %></td>
+        <td><%= school.lat %></td>
+        <td><%= school.lon %></td>
+        <td><%= school.name %></td>
+        <td><%= school.num_classrooms %></td>
+        <td><%= school.num_latrines %></td>
+        <td><%= school.num_teachers %></td>
+        <td><%= school.num_students %></td>
+        <td><%= school.num_sections %></td>
+        <td><%= school.phone_number %></td>
+        <td><%= school.postal_code %></td>
+        <td><%= school.speed_connectivity %></td>
+        <td><%= school.type_conectivity %></td>
+        <td><%= school.type_school %></td>
+        <td><%= school.water %></td>
+        <td><%= link_to 'Show', school %></td>
+        <td><%= link_to 'Edit', edit_school_path(school) %></td>
+        <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New School', new_school_path %>

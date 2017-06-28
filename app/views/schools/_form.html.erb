@@ -1,0 +1,192 @@
+<%= form_with(model: school, local: true) do |form| %>
+  <% if school.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(school.errors.count, "error") %> prohibited this school from being saved:</h2>
+
+      <ul>
+      <% school.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :school_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :admin0 %>
+    <%= form.text_field :admin0, id: :school_admin0 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :admin1 %>
+    <%= form.text_field :admin1, id: :school_admin1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :admin2 %>
+    <%= form.text_field :admin2, id: :school_admin2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :admin3 %>
+    <%= form.text_field :admin3, id: :school_admin3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :admin4 %>
+    <%= form.text_field :admin4, id: :school_admin4 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :admin_code %>
+    <%= form.text_field :admin_code, id: :school_admin_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :admin_id %>
+    <%= form.text_field :admin_id, id: :school_admin_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :altitude %>
+    <%= form.text_field :altitude, id: :school_altitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :availability_connectivity %>
+    <%= form.text_field :availability_connectivity, id: :school_availability_connectivity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :connectivity %>
+    <%= form.check_box :connectivity, id: :school_connectivity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country, id: :school_country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country_code %>
+    <%= form.text_field :country_code, id: :school_country_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :datasource_id %>
+    <%= form.text_field :datasource_id, id: :school_datasource_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :school_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :educ_level %>
+    <%= form.text_field :educ_level, id: :school_educ_level %>
+  </div>
+
+  <div class="field">
+    <%= form.label :electricity %>
+    <%= form.check_box :electricity, id: :school_electricity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :environment %>
+    <%= form.text_field :environment, id: :school_environment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :filename %>
+    <%= form.text_field :filename, id: :school_filename %>
+  </div>
+
+  <div class="field">
+    <%= form.label :frequency %>
+    <%= form.text_field :frequency, id: :school_frequency %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latency_connectivity %>
+    <%= form.text_field :latency_connectivity, id: :school_latency_connectivity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lat %>
+    <%= form.text_field :lat, id: :school_lat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lon %>
+    <%= form.text_field :lon, id: :school_lon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :school_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :num_classrooms %>
+    <%= form.number_field :num_classrooms, id: :school_num_classrooms %>
+  </div>
+
+  <div class="field">
+    <%= form.label :num_latrines %>
+    <%= form.number_field :num_latrines, id: :school_num_latrines %>
+  </div>
+
+  <div class="field">
+    <%= form.label :num_teachers %>
+    <%= form.number_field :num_teachers, id: :school_num_teachers %>
+  </div>
+
+  <div class="field">
+    <%= form.label :num_students %>
+    <%= form.number_field :num_students, id: :school_num_students %>
+  </div>
+
+  <div class="field">
+    <%= form.label :num_sections %>
+    <%= form.number_field :num_sections, id: :school_num_sections %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number, id: :school_phone_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postal_code %>
+    <%= form.text_field :postal_code, id: :school_postal_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :speed_connectivity %>
+    <%= form.text_field :speed_connectivity, id: :school_speed_connectivity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type_conectivity %>
+    <%= form.text_field :type_conectivity, id: :school_type_conectivity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type_school %>
+    <%= form.text_field :type_school, id: :school_type_school %>
+  </div>
+
+  <div class="field">
+    <%= form.label :water %>
+    <%= form.check_box :water, id: :school_water %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
