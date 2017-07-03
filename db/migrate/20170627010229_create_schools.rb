@@ -14,7 +14,7 @@ class CreateSchools < ActiveRecord::Migration[5.1]
       t.boolean :connectivity
       t.string :country
       t.string :country_code
-      t.string :datasource_id
+      t.string :datasource
       t.text :description
       t.string :educ_level
       t.boolean :electricity
