@@ -12,14 +12,12 @@ class CreateSchools < ActiveRecord::Migration[5.1]
       t.string :altitude
       t.float :availability_connectivity
       t.boolean :connectivity
-      t.string :country
       t.string :country_code
       t.string :datasource
       t.text :description
       t.string :educ_level
       t.boolean :electricity
       t.string :environment
-      t.string :filename
       t.string :frequency
       t.float :latency_connectivity
       t.float :lat
