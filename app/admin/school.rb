@@ -75,7 +75,7 @@ ActiveAdmin.register School do
       f.input :admin3
       f.input :admin4
       f.input :name
-      f.input :country_code, as: :country
+      f.input :country_code, as: :country, label: "Country"
       # f.input :country, :as => :string
       f.input :lat
       f.input :lon
