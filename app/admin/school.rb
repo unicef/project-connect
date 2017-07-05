@@ -1,3 +1,6 @@
+ActiveAdmin.setup do |config|
+  config.default_per_page = 100
+end
 ActiveAdmin.register School do
   active_admin_import validate: true,
   before_batch_import: proc { |import|
