@@ -1,3 +1,0 @@
-example_id                   | status | run_time     |
----------------------------- | ------ | ------------ |
-./spec/import_spec.rb[1:1:1] | passed | 1.03 seconds |
