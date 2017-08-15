@@ -2,10 +2,12 @@ ActiveAdmin.setup do |config|
   config.default_per_page = 100
 end
 ActiveAdmin.register School do
+
   active_admin_import validate: true,
   before_batch_import: proc { |import|
     # country_lookup = JSON.parse(File.read('./public/country_codes.json'))
     # Get country code from file name
+    School.where(datasource: import.file.original_filename).destroy_all
     country_code = import.file.original_filename.split('-').first.upcase
     import.headers["country_code"] = :country_code
     import.headers["datasource"] = :datasource

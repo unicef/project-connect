@@ -17,10 +17,7 @@ RSpec.describe 'import', type: :feature do
     visit '/admin/schools/import'
     fill_in 'admin_user_password', with: 'password'
     fill_in 'admin_user_email', with: 'admin@example.com'
-    p page.html
-
     first('input[type="submit"]').click
-#find_button('submit').click
   end
 
   context 'When csv with same name is uploaded twice' do
