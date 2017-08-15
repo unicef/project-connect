@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin', '~> 1.0'
 gem 'devise'
 gem 'country_select'
 gem "active_admin_import" , '3.0.0'
@@ -38,13 +38,18 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
 group :development, :test do
+  gem 'launchy'
+  gem 'database_cleaner'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
+  gem 'capybara'
+  gem 'poltergeist'
   gem 'selenium-webdriver'
+  gem 'rspec-rails'
+  gem 'jquery-ui-rails', '~> 5.0'
+  gem 'coveralls', require: false # Test coverage website. Go to https://coveralls.io
 end
 
 group :development do
