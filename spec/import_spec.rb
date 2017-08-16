@@ -27,13 +27,43 @@ RSpec.describe 'import', type: :feature do
       visit '/admin/schools/import'
     end
 
+    it 'should not replace old ones if file fails validation' do
+      visit '/admin/schools/import'
+      upload_file!('files', 'BR-zzzz-0-ZZZZ-1')
+      expect(School.count).to eq(2)
+      upload_file!('files', 'CO-aaaa-0-AAAA-1')
+      expect(School.count).to eq(4)
+      expect(School.where(datasource: 'BR-zzzz-0-ZZZZ-1.csv').first.admin1).to eq('One')
+      p 'AAAAAAA'
+      upload_file!('files_bad', 'BR-zzzz-0-ZZZZ-1')
+      p 'BBBBBBBBB'
+      expect(School.count).to eq(4)
+      expect(page).to have_content 'unknown attribute'
+      expect(School.where(datasource: 'BR-zzzz-0-ZZZZ-1.csv').first.admin1).to eq('One')
+      expect(School.where(datasource: 'CO-aaaa-0-AAAA-1.csv').count).to eq(2)
+      expect(School.where(datasource: 'BR-zzzz-0-ZZZZ-1.csv').count).to eq(2)
+      expect(School.count).to eq(4)
+      # expect(School.where(datasource: 'CO-aaaa-0-AAAA-1.csv').count).to eq(2)
+      # expect(School.where(datasource: 'BR-zzzz-0-ZZZZ-1.csv').count).to eq(2)
+      # expect(School.where(datasource: 'BR-zzzz-0-ZZZZ-1.csv').first.admin1).to eq('Three')
+      # p page.html
+    end
+  end
+
+  context 'When csv with same name is uploaded twice' do
+    before do
+      create_user
+      login
+      visit '/admin/schools/import'
+    end
+
     it 'should replace old records with new ones' do
       visit '/admin/schools/import'
       upload_file!('files', 'BR-zzzz-0-ZZZZ-1')
       upload_file!('files', 'CO-aaaa-0-AAAA-1')
       expect(School.count).to eq(4)
       expect(School.where(datasource: 'BR-zzzz-0-ZZZZ-1.csv').first.admin1).to eq('One')
-      upload_file!('files2', 'BR-zzzz-0-ZZZZ-1')
+      upload_file!('files_good', 'BR-zzzz-0-ZZZZ-1')
       expect(School.where(datasource: 'CO-aaaa-0-AAAA-1.csv').count).to eq(2)
       expect(School.where(datasource: 'BR-zzzz-0-ZZZZ-1.csv').count).to eq(2)
       expect(School.where(datasource: 'BR-zzzz-0-ZZZZ-1.csv').first.admin1).to eq('Three')
