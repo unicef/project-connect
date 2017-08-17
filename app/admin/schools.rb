@@ -8,11 +8,31 @@ ActiveAdmin.register School do
     # country_lookup = JSON.parse(File.read('./public/country_codes.json'))
     # Get country code from file name
     School.where(datasource: import.file.original_filename).destroy_all
-    country_code = import.file.original_filename.split('-').first.upcase
+
+    # Name file will be : 'country_code'-'owner-'privacy_data'-'datasource_id'-'privacy_source'.csv
+
+    file_name_segments = import.file.original_filename.sub(/.csv$/, '').split('-')
+    country_code = file_name_segments.first.upcase
+    owner = file_name_segments[1]
+    is_private = file_name_segments[2].to_i == 1 ? true : false
+    provider = file_name_segments[3]
+    provider_is_private = file_name_segments[4] == 1 ? true : false
+
+
     import.headers["country_code"] = :country_code
+    import.headers["owner"] = :owner
+    import.headers["is_private"] = :is_private
+    import.headers["provider"] = :provider
+    import.headers["provider_is_private"] = :provider_is_private
     import.headers["datasource"] = :datasource
+
     import.batch_replace(:country_code, { nil =>  country_code} )
+    import.batch_replace(:owner, { nil =>  owner} )
+    import.batch_replace(:provider, { nil =>  provider} )
     import.batch_replace(:datasource, { nil =>  import.file.original_filename} )
+    import.batch_replace(:is_private, { nil =>  is_private} )
+    import.batch_replace(:provider_is_private, { nil =>  provider_is_private} )
+
   },
   after_batch_import: proc{ |import|
      #the same
