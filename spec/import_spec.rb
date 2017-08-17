@@ -34,9 +34,7 @@ RSpec.describe 'import', type: :feature do
       upload_file!('files', 'CO-aaaa-0-AAAA-1')
       expect(School.count).to eq(4)
       expect(School.where(datasource: 'BR-zzzz-0-ZZZZ-1.csv').first.admin1).to eq('One')
-      p 'AAAAAAA'
       upload_file!('files_bad', 'BR-zzzz-0-ZZZZ-1')
-      p 'BBBBBBBBB'
       expect(School.count).to eq(4)
       expect(page).to have_content 'unknown attribute'
       expect(School.where(datasource: 'BR-zzzz-0-ZZZZ-1.csv').first.admin1).to eq('One')
