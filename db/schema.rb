@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170627010229) do
+ActiveRecord::Schema.define(version: 20170817165725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,20 @@ ActiveRecord::Schema.define(version: 20170627010229) do
     t.boolean "water"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address2"
+    t.string "person_contact"
+    t.string "email"
+    t.float "geoloc_confidence"
+    t.float "tower_dist"
+    t.string "tower_type_service"
+    t.string "tower_type"
+    t.string "tower_code"
+    t.float "tower_latitude"
+    t.float "tower_longitude"
+    t.string "owner"
+    t.string "provider"
+    t.boolean "is_private"
+    t.boolean "provider_is_private"
   end
 
   create_table "users", force: :cascade do |t|
