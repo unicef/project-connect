@@ -16,7 +16,7 @@ ActiveAdmin.register School do
     owner = file_name_segments[1]
     is_private = file_name_segments[2].to_i == 1 ? true : false
     provider = file_name_segments[3]
-    provider_is_private = file_name_segments[4] == 1 ? true : false
+    provider_is_private = file_name_segments[4].to_i == 1 ? true : false
 
 
     import.headers["country_code"] = :country_code
