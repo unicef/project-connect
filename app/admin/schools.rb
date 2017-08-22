@@ -38,7 +38,12 @@ ActiveAdmin.register School do
      #the same
   }
 
-
+  batch_action :delete do |ids|
+    num_schools = ids.count
+    ids.each { |id| School.find(id).delete}
+    # use those IDs to do stuff here
+    redirect_to collection_path, :notice => "We deleted #{num_schools} schools!"
+  end
   actions :all
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -57,9 +62,9 @@ ActiveAdmin.register School do
   #   selectable_column
   #   id_column
   #   column :country_code
-  #   column :name
-  #   column :lat
-  #   column :lon
+  #   # column :name
+  #   # column :lat
+  #   # column :lon
   #   # column :category
   #   # column "Release Date", :released_at
   #   # column :price, :sortable => :price do |product|
@@ -67,8 +72,8 @@ ActiveAdmin.register School do
   #   #     number_to_currency product.price
   #   #   end
   #   # end
-  #
   # end
+
   form do |f|
     f.inputs do
       f.input :address
