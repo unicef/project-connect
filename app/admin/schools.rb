@@ -1,14 +1,15 @@
+require 'pry'
 ActiveAdmin.setup do |config|
   config.default_per_page = 100
 end
 ActiveAdmin.register School do
 
-  active_admin_import validate: true,
+  active_admin_import  batch_size: 10000000, validate: true,
+
   before_batch_import: proc { |import|
     # country_lookup = JSON.parse(File.read('./public/country_codes.json'))
     # Get country code from file name
     School.where(datasource: import.file.original_filename).destroy_all
-
     # Name file will be : 'country_code'-'owner-'privacy_data'-'datasource_id'-'privacy_source'.csv
 
     file_name_segments = import.file.original_filename.sub(/.csv$/, '').split('-')
@@ -36,6 +37,7 @@ ActiveAdmin.register School do
   },
   after_batch_import: proc{ |import|
      #the same
+     p "XXXXX"
   }
 
   batch_action :delete do |ids|
