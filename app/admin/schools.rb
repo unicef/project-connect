@@ -2,7 +2,11 @@ require 'pry'
 ActiveAdmin.setup do |config|
   config.default_per_page = 100
 end
+
 ActiveAdmin.register School do
+  before_action only: [:do_import] do
+    Thread.current['import.current_admin_user'] = current_admin_user
+  end
 
   active_admin_import  batch_size: 10000000, validate: true,
 
@@ -11,15 +15,15 @@ ActiveAdmin.register School do
     # Get country code from file name
     School.where(datasource: import.file.original_filename).destroy_all
     # Name file will be : 'country_code'-'owner-'privacy_data'-'datasource_id'-'privacy_source'.csv
-
     file_name_segments = import.file.original_filename.sub(/.csv$/, '').split('-')
+    creator_email = Thread.current['import.current_admin_user'].email
     country_code = file_name_segments.first.upcase
     owner = file_name_segments[1]
     is_private = file_name_segments[2].to_i == 1 ? true : false
     provider = file_name_segments[3]
     provider_is_private = file_name_segments[4].to_i == 1 ? true : false
 
-
+    import.headers["creator_email"] = :creator_email
     import.headers["country_code"] = :country_code
     import.headers["owner"] = :owner
     import.headers["is_private"] = :is_private
@@ -27,6 +31,7 @@ ActiveAdmin.register School do
     import.headers["provider_is_private"] = :provider_is_private
     import.headers["datasource"] = :datasource
 
+    import.batch_replace(:creator_email, { nil =>  creator_email} )
     import.batch_replace(:country_code, { nil =>  country_code} )
     import.batch_replace(:owner, { nil =>  owner} )
     import.batch_replace(:provider, { nil =>  provider} )
@@ -36,8 +41,6 @@ ActiveAdmin.register School do
 
   },
   after_batch_import: proc{ |import|
-     #the same
-     p "XXXXX"
   }
 
   batch_action :delete do |ids|

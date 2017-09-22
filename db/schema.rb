@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821223853) do
+ActiveRecord::Schema.define(version: 20170922193052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 20170821223853) do
     t.string "provider"
     t.boolean "is_private"
     t.boolean "provider_is_private"
+    t.string "creator_email"
     t.index ["address"], name: "index_schools_on_address"
     t.index ["address2"], name: "index_schools_on_address2"
     t.index ["admin0"], name: "index_schools_on_admin0"
