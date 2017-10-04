@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170922193052) do
+ActiveRecord::Schema.define(version: 20171004165448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20170922193052) do
     t.string "phone_number"
     t.string "postal_code"
     t.float "speed_connectivity"
-    t.string "type_conectivity"
+    t.string "type_connectivity"
     t.string "type_school"
     t.boolean "water"
     t.datetime "created_at", null: false
@@ -140,7 +140,7 @@ ActiveRecord::Schema.define(version: 20170922193052) do
     t.index ["tower_longitude"], name: "index_schools_on_tower_longitude"
     t.index ["tower_type"], name: "index_schools_on_tower_type"
     t.index ["tower_type_service"], name: "index_schools_on_tower_type_service"
-    t.index ["type_conectivity"], name: "index_schools_on_type_conectivity"
+    t.index ["type_connectivity"], name: "index_schools_on_type_connectivity"
     t.index ["type_school"], name: "index_schools_on_type_school"
     t.index ["water"], name: "index_schools_on_water"
   end
