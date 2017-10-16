@@ -115,7 +115,7 @@ ActiveAdmin.register School do
       f.input :phone_number
       f.input :postal_code
       f.input :speed_connectivity
-      f.input :type_conectivity
+      f.input :type_connectivity
       f.input :type_school
       f.input :water
     end

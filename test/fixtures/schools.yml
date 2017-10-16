@@ -33,7 +33,7 @@ one:
   phone_number: MyString
   postal_code: MyString
   speed_connectivity: 1.5
-  type_conectivity: MyString
+  type_connectivity: MyString
   type_school: MyString
   water: false
 
@@ -70,6 +70,6 @@ two:
   phone_number: MyString
   postal_code: MyString
   speed_connectivity: 1.5
-  type_conectivity: MyString
+  type_connectivity: MyString
   type_school: MyString
   water: false

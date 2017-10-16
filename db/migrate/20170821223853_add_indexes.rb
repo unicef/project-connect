@@ -28,7 +28,7 @@ class AddIndexes < ActiveRecord::Migration[5.1]
     add_index :schools, :num_students
     add_index :schools, :num_sections
     add_index :schools, :speed_connectivity
-    add_index :schools, :type_conectivity
+    add_index :schools, :type_connectivity
     add_index :schools, :type_school
     add_index :schools, :water
     add_index :schools, :address2

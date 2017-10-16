@@ -31,7 +31,7 @@ class CreateSchools < ActiveRecord::Migration[5.1]
       t.string :phone_number
       t.string :postal_code
       t.float :speed_connectivity
-      t.string :type_conectivity
+      t.string :type_connectivity
       t.string :type_school
       t.boolean :water
 
