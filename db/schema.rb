@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171011214613) do
+ActiveRecord::Schema.define(version: 20171018145703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,12 @@ ActiveRecord::Schema.define(version: 20171011214613) do
     t.string "creator_email"
     t.boolean "coords_within_country"
     t.datetime "date_geo_validated"
+    t.integer "id_0"
+    t.integer "id_1"
+    t.integer "id_2"
+    t.integer "id_3"
+    t.integer "id_4"
+    t.integer "id_5"
     t.index ["address"], name: "index_schools_on_address"
     t.index ["address2"], name: "index_schools_on_address2"
     t.index ["admin0"], name: "index_schools_on_admin0"
@@ -123,6 +129,12 @@ ActiveRecord::Schema.define(version: 20171011214613) do
     t.index ["environment"], name: "index_schools_on_environment"
     t.index ["frequency"], name: "index_schools_on_frequency"
     t.index ["geoloc_confidence"], name: "index_schools_on_geoloc_confidence"
+    t.index ["id_0"], name: "index_schools_on_id_0"
+    t.index ["id_1"], name: "index_schools_on_id_1"
+    t.index ["id_2"], name: "index_schools_on_id_2"
+    t.index ["id_3"], name: "index_schools_on_id_3"
+    t.index ["id_4"], name: "index_schools_on_id_4"
+    t.index ["id_5"], name: "index_schools_on_id_5"
     t.index ["is_private"], name: "index_schools_on_is_private"
     t.index ["lat"], name: "index_schools_on_lat"
     t.index ["latency_connectivity"], name: "index_schools_on_latency_connectivity"
