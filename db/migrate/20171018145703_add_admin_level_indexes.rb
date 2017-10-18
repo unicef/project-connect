@@ -1,12 +1,12 @@
-class Add < ActiveRecord::Migration[5.1]
+class AddAdminLevelIndexes < ActiveRecord::Migration[5.1]
   def change
     change_table :schools do |t|
-      t.integer :id_0
-      t.integer :id_1
-      t.integer :id_2
-      t.integer :id_3
-      t.integer :id_4
-      t.integer :id_5
+      t.string :id_0
+      t.string :id_1
+      t.string :id_2
+      t.string :id_3
+      t.string :id_4
+      t.string :id_5
     end
     add_index :schools, :id_0
     add_index :schools, :id_1
