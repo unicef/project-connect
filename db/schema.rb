@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018145703) do
+ActiveRecord::Schema.define(version: 20171107012124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(version: 20171018145703) do
     t.string "id_3"
     t.string "id_4"
     t.string "id_5"
+    t.boolean "hasProbeData"
     t.index ["address"], name: "index_schools_on_address"
     t.index ["address2"], name: "index_schools_on_address2"
     t.index ["admin0"], name: "index_schools_on_admin0"
@@ -129,6 +130,7 @@ ActiveRecord::Schema.define(version: 20171018145703) do
     t.index ["environment"], name: "index_schools_on_environment"
     t.index ["frequency"], name: "index_schools_on_frequency"
     t.index ["geoloc_confidence"], name: "index_schools_on_geoloc_confidence"
+    t.index ["hasProbeData"], name: "index_schools_on_hasProbeData"
     t.index ["id_0"], name: "index_schools_on_id_0"
     t.index ["id_1"], name: "index_schools_on_id_1"
     t.index ["id_2"], name: "index_schools_on_id_2"
