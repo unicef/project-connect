@@ -187,11 +187,24 @@
   </div>
 
   <div class="field">
-    <%= form.label :has_probe_data %>
-    <%= form.text_field :altitude, id: :school_has_probe_data %>
+    <%= form.label :probe_id %>
+    <%= form.text_field :probe_id, id: :school_probe_id %>
   </div>
 
+  <div class="field">
+    <%= form.label :probe_provider %>
+    <%= form.text_field :probe_provider, id: :school_probe_provider %>
+  </div>
 
+  <div class="field">
+    <%= form.label :isp_id %>
+    <%= form.text_field :isp_id, id: :school_isp_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :school_id %>
+    <%= form.text_field :school_id, id: :school_school_id %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

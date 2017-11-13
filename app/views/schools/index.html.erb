@@ -40,7 +40,10 @@
       <th>Type connectivity</th>
       <th>Type school</th>
       <th>Water</th>
-      <th>Has Probe Data</th>
+      <th>Probe ID</th>
+      <th>Probe provider</th>
+      <th>ISP ID</th>
+      <th>School ID</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -83,7 +86,10 @@
         <td><%= school.type_connectivity %></td>
         <td><%= school.type_school %></td>
         <td><%= school.water %></td>
-        <td><%= school.has_probe_data %></td>
+        <td><%= school.probe_id %></td>
+        <td><%= school.probe_provider %></td>
+        <td><%= school.isp_id %></td>
+        <td><%= school.school_id %></td>
         <td><%= link_to 'Show', school %></td>
         <td><%= link_to 'Edit', edit_school_path(school) %></td>
         <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>

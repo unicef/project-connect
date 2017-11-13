@@ -180,5 +180,24 @@
   <%= @school.hasProbeData %>
 </p>
 
+<p>
+  <strong>Probe ID:</strong>
+  <%= @school.probe_id %>
+</p>
+
+<p>
+  <strong>Probe provider:</strong>
+  <%= @school.probe_provider %>
+</p>
+
+<p>
+  <strong>ISP ID:</strong>
+  <%= @school.isp_id %>
+</p>
+
+<p>
+  <strong>School_id:</strong>
+  <%= @school.school_id %>
+</p>
 <%= link_to 'Edit', edit_school_path(@school) %> |
 <%= link_to 'Back', schools_path %>
