@@ -56,7 +56,7 @@ ActiveAdmin.register School do
 # permit_params :list, :of, :attributes, :on, :model
   #permit_params :name, :country_code, :lat, :lon
   # permit_params :address, :admin0, :admin1, :admin2, :admin3, :admin4, :admin_code, :admin_id, :altitude, :availability_connectivity, :connectivity, :country, :country_code, :datasource, :description, :educ_level, :electricity, :environment, :frequency, :latency_connectivity, :lat, :lon, :name, :num_classrooms, :num_latrines, :num_teachers, :num_students, :num_sections, :phone_number, :postal_code, :speed_connectivity, :type_connectivity, :type_school, :water
-  permit_params :address, :admin0, :admin1, :admin2, :admin3, :admin4, :name, :country_code, :lat, :lon, :admin_id, :altitude, :availability_connectivity, :connectivity, :country_code, :datasource, :description, :educ_level, :electricity, :environment, :frequency, :latency_connectivity, :num_classrooms, :num_latrines, :num_teachers, :num_students, :num_sections, :phone_number, :postal_code, :speed_connectivity, :type_connectivity, :type_school, :water, :probe_id, :probe_provider, :isp_id, :school_id
+  permit_params :address, :admin0, :admin1, :admin2, :admin3, :admin4, :name, :country_code, :lat, :lon, :admin_id, :altitude, :availability_connectivity, :connectivity, :country_code, :datasource, :description, :educ_level, :electricity, :environment, :frequency, :latency_connectivity, :num_classrooms, :num_latrines, :num_teachers, :num_students, :num_sections, :phone_number, :postal_code, :speed_connectivity, :type_connectivity, :type_school, :water, :probe_id, :probe_provider, :isp_id, :school_id, :ethnic_group, :gender, :sector, :shift_type
 #
 # or
 #
@@ -121,6 +121,10 @@ ActiveAdmin.register School do
       f.input :type_connectivity
       f.input :type_school
       f.input :water
+      f.input :ethnic_group
+      f.input :gender
+      f.input :sector
+      f.input :shift_type
     end
     f.actions
   end
