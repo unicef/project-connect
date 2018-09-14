@@ -17,7 +17,7 @@ ActiveAdmin.register School do
     # Name file will be : 'country_code'-'owner-'privacy_data'-'datasource_id'-'privacy_source'.csv
     file_name_segments = import.file.original_filename.sub(/.csv$/, '').split('-')
     creator_email = Thread.current['import.current_admin_user'].email
-    country_code = file_name_segments.first.upcase
+    country_code = file_name_segments.first.upcase.strip()
     owner = file_name_segments[1]
     is_private = file_name_segments[2].to_i == 1 ? true : false
     provider = file_name_segments[3]
